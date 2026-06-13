@@ -10,10 +10,13 @@ The algorithm started with a small matching connection (a seed) across three dat
 
 In order to identify the largest N possible across datasets, open source data from Flywire Codex were used and final output CSV data was checked manually by looking into each of the random Root ID between all 3 datasets and and grouping based of their similarities betweeen:
 
-**1. Cell Type
-2. Soma side
-3. Flow
-4. Hemilineage**
+****1. Cell Type**
+
+**2. Soma side****
+
+**3. Flow**
+
+**4. Hemilineage****
 
 A total amount of 10% output data was selected for this manual verification. This step is to ensure that the final analyzed data produced are isomorphic and is indeed a motif between all 3 different sets of connectomes.
 
@@ -21,8 +24,9 @@ A total amount of 10% output data was selected for this manual verification. Thi
 
 For each candidate neuron, I encoded its relationship to the current subgraph as a binary signature:
 
-**existing_i → candidate
-candidate → existing_i**
+****existing_i → candidate**
+
+**candidate → existing_i****
 
 for every existing matched neuron i.
 
@@ -63,17 +67,24 @@ Finally, every solution was verified by reconstructing the connectivity pattern 
 **Reproduction instructions**
 
 1. Place the five Codex edge-list CSV files in the expected directory.
+
 2. Update the paths dictionary to point to the local files.
+
 3. Set the random seed:
+
        ** random.seed(31415)**
+
 4. Run the solver for each of the ten 3-dataset combinations.
+
 For each triplet, run:
 
     **40 random-seeded greedy trials
     30 shallow perturbation trials
     20 deep perturbation trials**
    
+
 6. Save the largest verified solution as solution.csv.
+
 7. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
 
 By using this procedure, the largest solution found was N = 2,311 across BANC, FAFB, and MCNS, with 2,451 directed edges.
