@@ -1,5 +1,20 @@
 # FlyWire-Summer-Internship-2026-Submission
 
+
+**Approach**
+
+Here, one of the largest directed induced subgraph isomorphic across three Drosophila connectomic datasets were identified. This algorithm uses connection profile matching with inverted-index acceleration: 
+
+For each candidate neuron, a binary signature encodes all directed edges to/from existing subgraph members. Rather than computing signatures per-candidate:            
+       (O(N×|cands|)) 
+
+We iterate adjacency lists of existing members to build all signatures in one pass 
+
+       (O(N×avg_degree))
+       
+This helps achieving **20-100×** speedup per step. Candidates sharing identical signatures across all datasets preserve isomorphism by construction. We run 40 randomseeded trials plus 50 perturbation trials (trimming 1-99% of the best solution and re-extending) to escape local optima.
+
+
 **Technical strategy**
 
 I modeled each Codex dataset as an unweighted directed graph and ignored the synapse count weights as required. The goal was to find three neuron lists of equal length such that the induced directed adjacency matrix is identical across the three selected datasets. In this case, datasets (BANC, FAFB, and MCNS) were selected. The reason I selected these datasets is because these three datasets provide a large-scale and broader coverage of the adult Drosophila brain and/or the central nervous system (CNS). On the other hand, the MAOL and MANC are region-specific datasets that cover only the optic lobe and the venral nerve cord respectively. This results in a limited anatomical coverage which makes them less suitable for finding a large sets of motif between different datasets.
@@ -90,3 +105,7 @@ For each triplet, run:
 6. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
 
 By using this procedure, the largest solution found was **N = 2,311** across BANC, FAFB, and MCNS, with 2,451 directed edges.
+
+**Primary submission**
+Maximum N: An isomorphic subgraph of N = 2,311 neurons across BANC (female brain + nerve cord, 112,885 neurons), FAFB (female adult brain, 138,584 neurons), and MCNS (male complete CNS, 165,820 neurons) were found. The shared adjacency matrix contains 2,451 directed edges (0.05% density). Exhaustive scanning of all C(5,3)=10 dataset triplets confirms this combination yields the largest shared structure; the runner-up (BANC+MAOL+MCNS) reaches only N≈1,259 under equivalent search effort. 
+
