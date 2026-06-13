@@ -6,7 +6,8 @@
 Here, one of the largest directed induced subgraph isomorphic across three Drosophila connectomic datasets were identified. This algorithm uses connection profile matching with inverted-index acceleration: 
 
 For each candidate neuron, a binary signature encodes all directed edges to/from existing subgraph members. Rather than computing signatures per-candidate:           
-              (O(N×|cands|)) 
+
+        (O(N×|cands|)) 
 
 We iterate adjacency lists of existing members to build all signatures in one pass 
 
