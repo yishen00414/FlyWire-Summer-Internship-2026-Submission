@@ -85,8 +85,8 @@ For each triplet, run:
     20 deep perturbation trials
    
 
-6. Save the largest verified solution as solution.csv.
+5. Save the largest verified solution as solution.csv.
 
-7. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
+6. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
 
 By using this procedure, the largest solution found was **N = 2,311** across BANC, FAFB, and MCNS, with 2,451 directed edges.
