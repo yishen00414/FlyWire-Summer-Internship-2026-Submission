@@ -105,8 +105,9 @@ For each triplet, run:
 
 6. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
 
-By using this procedure, the largest solution found was **N = 2,311** across BANC, FAFB, and MCNS, with 2,451 directed edges.
+By using this procedure, the largest solution found was **N = 2311** across BANC, FAFB, and MCNS, with 2451 directed edges.
 
 **Primary submission**
-Maximum N: An isomorphic subgraph of N = 2,311 neurons across BANC (female brain + nerve cord, 112,885 neurons), FAFB (female adult brain, 138,584 neurons), and MCNS (male complete CNS, 165,820 neurons) were found. The shared adjacency matrix contains 2,451 directed edges (0.05% density). Exhaustive scanning of all C(5,3)=10 dataset triplets confirms this combination yields the largest shared structure; the runner-up (BANC+MAOL+MCNS) reaches only N≈1,259 under equivalent search effort. 
+
+Maximum N: An isomorphic subgraph of N = 2311 neurons across BANC (female brain + nerve cord, 112,885 neurons), FAFB (female adult brain, 138,584 neurons), and MCNS (male complete CNS, 165,820 neurons) were found. The shared adjacency matrix contains 2451 directed edges (0.05% density). Exhaustive scanning of all C(5,3)=10 dataset triplets confirms this combination yields the largest shared structure; the runner-up (BANC+MAOL+MCNS) reaches only N≈1259 under equivalent search effort. 
 
