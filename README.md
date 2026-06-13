@@ -4,6 +4,7 @@
 
 I modeled each Codex dataset as an unweighted directed graph and ignored the synapse count weights as required. The goal was to find three neuron lists of equal length such that the induced directed adjacency matrix is identical across the three selected datasets. In this case, datasets (BANC, FAFB, and MCNS) were selected. The reason I selected these datasets is because these three datasets provide a large-scale and broader coverage of the adult Drosophila brain and/or the central nervous system (CNS). On the other hand, the MAOL and MANC are region-specific datasets that cover only the optic lobe and the venral nerve cord respectively. This results in a limited anatomical coverage which makes them less suitable for finding a large sets of motif between different datasets.
 
+
 **Main Methods**
 
 The algorithm started with a small matching connection (a seed) across three datasets and gradually expanded it by adding one neuron at a time. A neuron was added only if its pattern of incoming and outgoing connections to the already-selected neurons matched the corresponding pattern in the other datasets. This ensured that the connectivity structure remained identical as the shared circuit grew.
@@ -20,17 +21,19 @@ In order to identify the largest N possible across datasets, open source data fr
 
 A total amount of 10% output data was selected for this manual verification. This step is to ensure that the final analyzed data produced are isomorphic and is indeed a motif between all 3 different sets of connectomes.
 
+
 **Graph-matching method**
 
 For each candidate neuron, I encoded its relationship to the current subgraph as a binary signature:
 
-**existing_i → candidate**
+       existing_i → candidate
 
-**candidate → existing_i**
+       candidate → existing_i
 
 for every existing matched neuron i.
 
 Candidates with identical signatures across the three datasets can be added while preserving directed induced-subgraph isomorphism. The final solution was independently verified by reconstructing the full N × N adjacency matrices for all three datasets and checking exact equality.
+
 
 **Acceleration**
 
@@ -46,6 +49,7 @@ to:
 
 which produced the reported **20–100×** speedup.
 
+
 **Heuristics**
 
 Here, the code that I used does not provide an exact maximum isomorphism solver. It first randomly selects compatible edge seeds to start the matched subgraph. Then, it uses a greedy extension to choose the shared signature within the largest number of edges to the current circuit. In order to search for the best network motif in these datasets, I performed a candidate pruning which limits the candidate pools to a maximum of 1500 with the code **(MAX_CANDS = 1500)**. 
@@ -54,6 +58,7 @@ Then, by performing a random restarts, I was able to do a perturbation search an
 Here, to improve the chances of finding a better motif, the search was repeated multiple times using different random starting points. Each dataset triplet undergoes a series of perturbation trials which includes 30 shallow perturbations (making a small changes to the current motif) and 20 deep perturbations (exploring more substantial changes). After each trial, weaker candidates were discarded, while higher-scoring motifs were retained and further expanded. This process allowed the algorithm to gradually refine the motif and identify a stronger and more conserved network structures.
 
 To ensure that the results were not specific to a single set of datasets, the same procedure was repeated for every possible combination of three datasets selected (BANC, FAFB, MCNS) from the five available datasets, resulting in 10 dataset triplets **(C(5,3) = 10)**. This approach enabled a broad comparison of network motifs across multiple connectome datasets.
+
 
 **Assumptions**
 
