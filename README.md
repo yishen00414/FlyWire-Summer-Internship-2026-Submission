@@ -12,7 +12,7 @@ In order to identify the largest N possible across datasets, open source data fr
 
 **1. Cell Type**
 
-**2. Soma side****
+**2. Soma side**
 
 **3. Flow**
 
@@ -44,7 +44,7 @@ to:
 
 **O(N × average_degree)**
 
-which produced the reported **20–100× ** speedup.
+which produced the reported **20–100×** speedup.
 
 **Heuristics**
 
@@ -87,4 +87,4 @@ For each triplet, run:
 
 7. Confirm validity using **verify()**, which checks that the three induced adjacency matrices are identical.
 
-By using this procedure, the largest solution found was N = 2,311 across BANC, FAFB, and MCNS, with 2,451 directed edges.
+By using this procedure, the largest solution found was **N = 2,311** across BANC, FAFB, and MCNS, with 2,451 directed edges.
