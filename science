@@ -1,0 +1,14 @@
+Biological Hypothesis
+The identification of a conserved directed subgraph containing 2,311 neurons across BANC, FAFB, and MCNS demonstrates that large-scale patterns of neural connectivity can be preserved across different Drosophila connectomes, including both female (BANC, FAFB) and male (MCNS) datasets. This finding extends previous efforts in cell-type matching across connectomes by showing that conservation can also be observed at the level of circuit organization rather than individual neurons alone (Schlegel et al., 2024).
+
+Analysis of neuron annotations revealed that the conserved circuit spans multiple biologically distinct populations, including Kenyon cells, central complex neurons, and motor neurons, and includes neurons using a variety of neurotransmitters such as acetylcholine (ACh), GABA, glutamate, dopamine, and serotonin. The presence of conserved connectivity patterns across diverse cell classes suggests that certain wiring principles may be maintained independently of neuron identity or neurotransmitter type.
+
+A second notable result was the discovery of a highly connected 7-neuron motif conserved across MANC, MAOL, and BANC. This circuit contains 38 of 42 possible directed connections (90.5% density), forming a near-complete reciprocal network. Dense recurrent motifs of this type have been associated with robust information flow and recurrent processing in neural systems (Reimann et al., 2017).
+
+One possible interpretation is that such motifs represent reusable network building blocks that appear in multiple regions of the Drosophila nervous system. Although the present analysis cannot determine function directly, the repeated occurrence of this structure across anatomically distinct datasets suggests that certain connectivity patterns may be evolutionarily conserved because they support important computational roles. Future work combining connectomic structure with physiological and behavioral data could help determine whether these conserved motifs contribute to functions such as information integration, memory, or stabilization of neural activity.
+
+References 
+Dorkenwald, Matsliah et al. (2024). Neuronal wiring diagram of an adult brain. Nature 634, 124138. 
+Schlegel et al. (2024). Whole-brain annotation and multi-connectome cell typing. Nature 634, 139152. 
+Reimann et al. (2017). Cliques of neurons bound into cavities provide missing link. Front. Comput. Neurosci. 11, 48. 
+Takemura et al. (2024). A connectome of the male Drosophila ventral nerve cord. eLife 13, RP97766. 
