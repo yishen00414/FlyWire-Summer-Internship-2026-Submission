@@ -11,13 +11,10 @@ The algorithm started with a small matching connection (a seed) across three dat
 
 In order to identify the largest N possible across datasets, open source data from Flywire Codex were used and final output CSV data was checked manually by looking into each of the random Root ID between all 3 datasets and and grouping based of their similarities betweeen:
 
-**1. Cell Type**
-
-**2. Soma side**
-
-**3. Flow**
-
-**4. Hemilineage**
+       1. Cell Type
+       2. Soma side
+       3. Flow
+       4. Hemilineage
 
 A total amount of 10% output data was selected for this manual verification. This step is to ensure that the final analyzed data produced are isomorphic and is indeed a motif between all 3 different sets of connectomes.
 
@@ -41,11 +38,11 @@ Instead of computing every candidate signature directly, the code uses an invert
 
 This reduces each extension step from roughly:
 
-**O(N × number_of_candidates)**
+       O(N × number_of_candidates)
 
 to:
 
-**O(N × average_degree)**
+       O(N × average_degree)
 
 which produced the reported **20–100×** speedup.
 
